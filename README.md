@@ -10,4 +10,4 @@
 
 1. Clonar el repositorio:
 
-   git clone https://github.com/gasparpino/myApp.git
+   git clone https://github.com/gasparpino/myApp.git  
