@@ -35,3 +35,43 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+// global.scss
+
+:root {
+    --ion-color-primary: #5c7cfa; // Azul vibrante para acciones importantes
+    --ion-color-secondary: #ffa94d; // Naranja para elementos secundarios
+    --ion-color-light: #f5f6fa; // Color de fondo claro
+    --ion-color-medium: #9aa0a6; // Texto suave o botones deshabilitados
+    --ion-color-dark: #2d3436; // Texto y elementos primarios
+    --ion-color-success: #34c759; // Verde para completar tareas
+    --ion-color-danger: #ff3b30; // Rojo para eliminar
+  }
+  
+  // Estilos generales
+  body {
+    font-family: 'Poppins', sans-serif; // Tipografía moderna
+    background-color: var(--ion-color-light); // Fondo claro
+  }
+  // global.scss - Tipografía
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+ion-content {
+  padding: 20px;
+}
+
+ion-button {
+    --background: var(--ion-color-primary);
+    --border-radius: 50px;
+    --color: white;
+    font-weight: bold;
+    margin: 10px;
+  }
+  
+  ion-button[routerLink] {
+    --background: var(--ion-color-secondary);
+  }

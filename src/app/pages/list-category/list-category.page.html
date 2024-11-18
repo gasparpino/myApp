@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/inicio">
+        <ion-icon name="home"></ion-icon>
+        Inicio
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Lista de Categorías</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let category of categories">
+      <ion-label>{{ category }}</ion-label>
+      <ion-button color="danger" slot="end">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" shape="round" (click)="goBack()">Volver</ion-button>
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/inicio">
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ currentDate.format('MMMM YYYY') }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="prevMonth()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="nextMonth()">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Calendario -->
+  <ion-grid>
+    <ion-row>
+      <ion-col class="day-header" *ngFor="let day of ['S', 'M', 'T', 'W', 'T', 'F', 'S']">
+        {{ day }}
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let week of [0, 1, 2, 3, 4, 5]">
+      <ion-col *ngFor="let day of daysInMonth.slice(week * 7, (week + 1) * 7)">
+        <div class="day-cell" (click)="selectDate(day)">
+          <span [class.today]="day.isToday" [class.selected]="isSelected(day.day)" [class.other-month]="!day.isCurrentMonth">
+            {{ day.day.date() }}
+          </span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Mostrar tareas seleccionadas -->
+  <ion-list *ngIf="selectedTasks.length > 0">
+    <ion-list-header>
+      <ion-label>Tareas para el día {{ selectedDate.format('DD/MM/YYYY') }}</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let task of selectedTasks">
+      <ion-label>{{ task }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Mensaje si no hay tareas -->
+  <ion-card *ngIf="selectedTasks.length === 0 && selectedDate">
+    <ion-card-content>No hay tareas para este día.</ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/inicio">
+        <ion-icon name="home"></ion-icon>
+        Inicio
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Pantalla de Reportes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Segmento para seleccionar reportes -->
+  <ion-segment>
+    <ion-segment-button value="diario">
+      Diario
+    </ion-segment-button>
+    <ion-segment-button value="semanal">
+      Semanal
+    </ion-segment-button>
+    <ion-segment-button value="mensual" checked>
+      Mensual
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Reporte de porcentaje de tareas completadas -->
+  <ion-card class="report-card">
+    <ion-card-header>
+      <ion-card-title>80% de tareas cumplidas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="circle-chart">
+        <div class="circle">80%</div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Progreso histórico -->
+  <ion-card class="report-card">
+    <ion-card-header>
+      <ion-card-title>Progreso Histórico</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="progress-container">
+        <ion-icon name="analytics-outline"></ion-icon>
+        <ion-icon name="bar-chart-outline"></ion-icon>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="full" shape="round" (click)="openHistoryPage()">Progreso histórico</ion-button>
+</ion-content>

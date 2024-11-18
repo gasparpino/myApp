@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/inicio">
+        <ion-icon name="home"></ion-icon>
+        Inicio
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Añadir Tarea</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Título</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Descripción</ion-label>
+    <ion-textarea></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Fecha Recordatorio</ion-label>
+    <ion-datetime display-format="DD/MM/YYYY"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Activar recordatorio</ion-label>
+    <ion-toggle slot="end"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Categoría</ion-label>
+    <ion-select placeholder="Seleccionar Categoría">
+      <ion-select-option value="work">Trabajo</ion-select-option>
+      <ion-select-option value="family">Familia</ion-select-option>
+      <ion-select-option value="leisure">Tiempo Libre</ion-select-option>
+    </ion-select>
+    <ion-button slot="end">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Fecha Vencimiento</ion-label>
+    <ion-datetime display-format="DD/MM/YYYY"></ion-datetime>
+  </ion-item>
+
+  <ion-button expand="full"  shape="round" color="primary">Agregar</ion-button>
+</ion-content>

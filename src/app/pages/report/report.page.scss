@@ -1,0 +1,49 @@
+// report.page.scss
+
+ion-segment-button {
+    --background: var(--ion-color-light);
+    --color: var(--ion-color-dark);
+    --indicator-color: var(--ion-color-primary);
+    --border-radius: 50px;
+    margin: 5px;
+  }
+  
+  .report-card {
+    --background: var(--ion-color-light);
+    --border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .circle-chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+  }
+  
+  .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--ion-color-primary);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .progress-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 36px;
+  }
+  
+  .progress-container ion-icon {
+    --color: var(--ion-color-secondary);
+  }
+  

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ToDoLista</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openAddTaskPage()">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar placeholder="Buscar tareas"></ion-searchbar>
+
+  <ion-item>
+    <ion-label>Categoría</ion-label>
+    <ion-select placeholder="Seleccionar Categoría">
+      <ion-select-option value="work">Trabajo</ion-select-option>
+      <ion-select-option value="family">Familia</ion-select-option>
+      <ion-select-option value="leisure">Tiempo Libre</ion-select-option>
+    </ion-select>
+    <ion-button slot="end"  routerLink="/add-category">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-button>
+
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let tarea of tareas">
+      <ion-label>{{ tarea.nombre }} Vence: {{ tarea.fecha }}</ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon name="pencil-outline"></ion-icon>
+        </ion-button>
+        <ion-button color="danger">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+
+  <ion-button shape="round" (click)="openCalendarPage()">Vista Calendario</ion-button>
+  <ion-button shape="round" (click)="openAddTaskPage()">Agregar Tarea</ion-button>
+  <ion-button shape="round" (click)="openReport()">Reportes</ion-button>
+</ion-content>
